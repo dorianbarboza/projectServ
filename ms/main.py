@@ -37,12 +37,12 @@ def add_user():
 		cursor.close()
 		conn.close()
 ## GET All Users
-@app.route('/AllUsuario')
-def AllUsuario():
+@app.route('/AllArtista')
+def getAllArtista():
 	try:
 		conn = mysql.connect()
 		cursor = conn.cursor(pymysql.cursors.DictCursor)
-		cursor.execute("SELECT ID_Usuario, Username, Password FROM Usuario")
+		cursor.execute("SELECT * FROM Artista")
 		rows = cursor.fetchall()
 		resp = jsonify(rows)
 		resp.status_code = 200
