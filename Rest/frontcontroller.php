@@ -9,6 +9,7 @@
 require 'Controllers/Usuario.php';
 require 'Controllers/Artista.php';
 require 'Controllers/Album.php';
+require 'Controllers/Cancion.php';
 require 'core/ExcepcionApi.php';
 require 'core/VistaApi.php';
 require 'core/VistaJson.php';
@@ -41,7 +42,7 @@ $recurso = array_shift($peticion);//
 
 //echo $recurso;
 
-$recursos_existentes = array('Usuario','Artista','Album'); //Se ponen en singular
+$recursos_existentes = array('Usuario','Artista','Album','Cancion'); //Se ponen en singular
 
 
 // Comprobar si existe el recurso
