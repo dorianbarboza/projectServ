@@ -1,17 +1,17 @@
 <?php
-require 'Models/ArtistaModel.php';
-class Artista {
+require 'Models/AlbumModel.php';
+class Album {
 
-  private $artistaModel;
+  private $albumModel;
 
   public function get($parametros){
     //echo var_dump($parametros);
-    $this->artistaModel = new ArtistaModel();
+    $this->albumModel = new AlbumModel();
     if(!empty($parametros[0])){
       switch($parametros[0]){
 
-        case 'getAllArtista':
-        return $this->artistaModel->getAllArtista();
+        case 'getAllAlbum':
+        return $this->albumModel->getAllAlbum();
         break;
 
         default:
@@ -22,7 +22,7 @@ class Artista {
   }
 
   public function post($parametros){
-    $this->artistaModel = new ArtistaModel();
+    $this->albumModel = new AlbumModel();
     // Se obtiene el JSON
     $cuerpo = file_get_contents('php://input');
     //Se decodifica el JSON para volverlo como una arreglo
@@ -31,16 +31,16 @@ class Artista {
     //Se busca el recurso pedido por el usuario
 
     switch($parametros[0]){
-      case 'insertArtista':
-      return $this->artistaModel->insertArtista($array);
+      case 'insertAbum':
+      return $this->albumModel->insertAlbum($array);
       break;
 
-      case 'updateArtista':
-      return $this->artistaModel->updateArtista($array);
+      case 'updateAlbum':
+      return $this->albumModel->updateAlbum($array);
       break;
 
-      case 'deleteArtista':
-      return $this->artistaModel->deleteArtista($array);
+      case 'deleteAlbum':
+      return $this->albumModel->deleteAlbum($array);
       break;
 
 
