@@ -104,7 +104,7 @@ def delete_user(id):
 	try:
 		conn = mysql.connect()
 		cursor = conn.cursor()
-		cursor.execute("DELETE FROM tbl_user WHERE user_id=%s", (id,))
+		cursor.execute("DELETE FROM Artista WHERE ID_Artista=%s", (id,))
 		conn.commit()
 		resp = jsonify('User deleted successfully!')
 		resp.status_code = 200
