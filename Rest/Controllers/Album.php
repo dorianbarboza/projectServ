@@ -31,7 +31,7 @@ class Album {
     //Se busca el recurso pedido por el usuario
 
     switch($parametros[0]){
-      case 'insertAbum':
+      case 'insertAlbum':
       return $this->albumModel->insertAlbum($array);
       break;
 

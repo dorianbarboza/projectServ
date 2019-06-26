@@ -18,7 +18,7 @@ class AlbumModel extends DBAbstractModel{
       }
     }
 
-    function insertAbum($array){
+    function insertAlbum($array){
       if(!empty($array)){
         $consulta = "INSERT INTO `Album` (`ID_Album`,`NombreAlbum`, `Publicacion`,`CiudadGrabacion`,`PaisGrabacion`,`Duracion`,`Genero`,`UrlImgAlbum`,`ID_Artista`)
         VALUES (
