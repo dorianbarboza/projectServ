@@ -1,15 +1,15 @@
 <?php
 require_once('core/db_abstract_model.php');
-class AlbumModel extends DBAbstractModel{
+class CancionModel extends DBAbstractModel{
 
   public function __construct() {}
 
     /************************
-    GET Album
+    GET Cancion
     *************************/
 
-    public function getAllAlbum(){
-      $this->query="SELECT * FROM Album";
+    public function getAllCancion(){
+      $this->query="SELECT * FROM Cancion";
       $this->get_results_from_query();
       if(count($this->rows) > 0){
         return [
@@ -18,19 +18,15 @@ class AlbumModel extends DBAbstractModel{
       }
     }
 
-    function insertAlbum($array){
+    function insertCancion($array){
       if(!empty($array)){
-        $consulta = "INSERT INTO `Album` (`ID_Album`,`NombreAlbum`, `Publicacion`,`CiudadGrabacion`,`PaisGrabacion`,`Duracion`,`Genero`,`UrlImgAlbum`,`ID_Artista`)
+        $consulta = "INSERT INTO `Cancion` (`ID_Cancion`,`NombreCancion`, `DuracionCancion`,`UrlSong`,`ID_Album`)
         VALUES (
-          '$array->ID_Album',
-          '$array->NombreAlbum',
-          '$array->Publicacion',
-          '$array->CiudadGrabacion',
-          '$array->PaisGrabacion',
-          '$array->Duracion',
-          '$array->Genero',
-          '$array->UrlImgAlbum',
-          '$array->ID_Artista');";
+          '$array->ID_Cancion',
+          '$array->NombreCancion',
+          '$array->DuracionCancion',
+          '$array->UrlSong',
+          '$array->ID_Album');";
         }
         $this->query = $consulta;
         // Ejecutar sentencia preparada
@@ -46,18 +42,14 @@ class AlbumModel extends DBAbstractModel{
         }
       }
 
-      function updateAlbum($array){
+      function updateCancion($array){
         if(!empty($array)){
-          $consulta = "UPDATE Album
-          SET Album.NombreAlbum = '$array->NombreAlbum',
-          Album.Publicacion = '$array->Publicacion',
-          Album.CiudadGrabacion = '$array->CiudadGrabacion',
-          Album.PaisGrabacion = '$array->PaisGrabacion',
-          Album.Duracion = '$array->Duracion',
-          Album.Genero = '$array->Genero',
-          Album.UrlImgAlbum = '$array->UrlImgAlbum',
-          Album.ID_Artista = '$array->ID_Artista'
-          WHERE  Album.ID_Album = $array->ID_Album";
+          $consulta = "UPDATE Cancion
+          SET Cancion.NombreCancion = '$array->NombreCancion',
+          Cancion.DuracionCancion = '$array->DuracionCancion',
+          Cancion.UrlSong = '$array->UrlSong',
+          Cancion.ID_Album = '$array->ID_Album'
+          WHERE  Cancion.ID_Cancion = $array->ID_Cancion";
         }
         //echo $consulta;
         $this->query = $consulta;
@@ -74,10 +66,10 @@ class AlbumModel extends DBAbstractModel{
         }
       }
 
-      function deleteAlbum($array){
+      function deleteCancion($array){
         if(!empty($array)){
-          $consulta = "DELETE FROM `Album`
-          WHERE Album.ID_Album = $array->ID_Album";
+          $consulta = "DELETE FROM `Cancion`
+          WHERE Cancion.ID_Cancion = $array->ID_Cancion";
         }
 
         //echo $consulta;
