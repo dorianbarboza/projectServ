@@ -1,3 +1,7 @@
+/**************************
+* Base de datos project
+**************************/
+
 CREATE DATABASE project;
 
 USE project;
@@ -51,3 +55,15 @@ ADD ID_Album int,
 ADD FOREIGN KEY (ID_Album)
 REFERENCES Album (ID_Album);
 );
+
+/**************************
+* Base de datos La carta
+**************************/
+
+/* Descripcion
+Las personas puedan ver los restaurantes por categorías de la ciudad en donde se
+ pueden observar los horarios de apertura, sus números telefónicos, dirección,
+ si cuentan o no con servicio a domicilio o reservaciones y observar el menú
+ detallado con imágenes respectivas con detalles de precio, kilogramos e
+ ingredientes de los platillos.
+*/
